@@ -27,7 +27,7 @@ jobs:
 
       - name: Run script on EC2
         run: |
-          ssh -o StrictHostKeyChecking=no -i private_key.pem ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+          ssh -o StrictHostKeyChecking=no -i private_key.pem ${{ secrets.EC2_USER }}@$Ec2LB-1233545415.us-east-1.elb.amazonaws.com << 'EOF'
             chmod +x ~/script.sh
             echo "Running script with input: ${{ github.event.inputs.message }}"
             ~/script.sh ${{ github.event.inputs.message }}
